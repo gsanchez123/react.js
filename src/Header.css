@@ -1,61 +1,90 @@
 /* src/components/Header.css */
 .header {
     width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa; /* Color de fondo más suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra  pronunciada */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 15px 0;
-    text-align: center;
+    padding: 20px 0; /* Espaciado aumentado para mejor apariencia */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0; /* Línea divisoria sutil */
 }
 
 .title-container h1 {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 2rem; /* Tamaño de fuente ajustado ajustarlo aun mas  */
+    color: #212529; /* Color de texto más oscuro */
     font-weight: bold;
+    margin: 0; /* Elimine margen */
 }
+
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    gap: 20px; /* Espaciado entre los ítems de la lista */
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #007bff;
+    color: #007bff; /* Color del enlace */
     font-size: 16px;
+    transition: color 0.3s ease; /* Transición para el cambio de color */
 }
 
-.cart-container {
-    margin-top: 10px;
+nav ul li a:hover {
+    color: #0056b3; /* Color del enlace en hover */
+}
+
+/* Estilos del carrito */
+.cart-widget {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .cart-button {
-    background-color: #007bff;
+    background-color: #28a745; /* Color verde para el botón */
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Transición para el color de fondo */
 }
 
 .cart-button:hover {
-    background-color: #0056b3;
+    background-color: #218838; /* Color verde más oscuro en hover */
+}
+
+.cart-count {
+    background-color: #dc3545; /* Color rojo para el contador */
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 5px 8px; /* Tamaño del contador */
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 20px; /* Ancho mínimo del contador */
+    text-align: center; /* Centra el texto en el contador cuidado */
 }
 
 .cart-container p {
-    margin-top: 10px;
+    margin: 0;
     font-size: 16px;
-    color: #333;
+    color: #212529; /* Color de texto más oscuro */
 }

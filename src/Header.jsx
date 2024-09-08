@@ -1,14 +1,14 @@
 
 
-// src/components/Header.jsx
 import React, { useState } from 'react';
+import { FaShoppingCart } from 'react-icons/fa'; // se utlizo un ícono para el carrito
 import './Header.css';
 
 function Header() {
-    // Estado para manejar el carrito de compras (simulación)
+    // Estado para manejar el carrito de compras 
     const [cartItems, setCartItems] = useState(0);
 
-    // Función para agregar un producto al carrito (simulación)
+    // Función para agregar un producto al carrito 
     const addToCart = () => {
         setCartItems(cartItems + 1);
         alert('Producto añadido al carrito!');
@@ -17,26 +17,24 @@ function Header() {
     return (
         <header className="header">
             <div className="title-container">
-                <h1>Sales Center</h1>
+                <h1>Sales Center</h1> {/* Título del proyecto */}
             </div>
             <nav>
-                <ul>
+                <ul className="categories">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div className="cart-container">
+            <div className="cart-widget">
+                <FaShoppingCart size={24} /> {/* Ícono del carrito */}
+                <span className="cart-count">{cartItems}</span>
                 <button onClick={addToCart} className="cart-button">
                     Añadir al Carrito
                 </button>
-                <p>Items en el carrito: {cartItems}</p>
             </div>
         </header>
     );
 }
 
 export default Header;
-
-
-
