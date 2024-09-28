@@ -1,0 +1,19 @@
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn {
+    width: 100%;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+}

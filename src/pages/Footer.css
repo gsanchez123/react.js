@@ -1,0 +1,22 @@
+.footer {
+    background-color: #f8f9fa;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .social-icons a {
+    color: #007bff;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #0056b3;
+}
+
+.footer p {
+    margin: 0;
+    color: #555;
+}
+
