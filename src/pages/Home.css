@@ -1,48 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* General Layout */
 .home-container {
-    text-align: center;
-    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Hero Section */
 .hero {
-    background-color: #f0f0f0;
-    padding: 50px 0;
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.8);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
 }
 
 .hero-title {
-    font-size: 3rem;
-    color: #007bff;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
 }
 
-.hero-description {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    color: #333;
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-.gallery {
+.btn-primary {
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b;
+}
+
+.btn-secondary {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
+}
+
+/* Grid Layout */
+.product-grid, .category-grid, .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.product-item, .category-item, .testimonial-item {
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover, .category-item:hover, .testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img, .category-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #27ae60;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Testimonials */
+.testimonial-item {
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* Newsletter */
+.newsletter-form {
     display: flex;
     justify-content: center;
-    gap: 20px;
     margin-top: 40px;
 }
 
-.gallery-item {
-    width: 30%;
+.input-email {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 50px;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+    width: 300px;
 }
 
-.gallery-item img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.newsletter-form button {
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        flex-direction: column;
-    }
-
-    .gallery-item {
-        width: 80%;
-        margin: 0 auto;
-    }
+.newsletter-form button:hover {
+    background-color: #e74c3c;
 }
+
+/* redes sociales  */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.icon-instagram, .icon-facebook, .icon-twitter {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+.icon-instagram:hover { color: #e4405f; }
+.icon-facebook:hover { color: #3b5998; }
+.icon-twitter:hover { color: #1da1f2; }

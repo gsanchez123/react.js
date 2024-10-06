@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <Link to="/">Sales Center</Link>
+                <Link to="/" className="logo-text">Sales Center</Link>
             </div>
             <div className={`nav-menu ${isOpen ? 'open' : ''}`}>
                 <ul>

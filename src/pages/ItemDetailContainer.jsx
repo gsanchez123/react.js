@@ -9,26 +9,28 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         // Simula la obtención de detalles de producto
-        const fetchItem = async () => {
-            const fetchedItems = [
-                { id: 1, name: 'Camiseta Deportiva', price: 20, description: 'Ideal para entrenamientos.', stock: 10 },
-                { id: 2, name: 'Pantalones Urbanos', price: 40, description: 'Estilo cómodo y moderno.', stock: 5 },
-                { id: 3, name: 'Zapatillas Urbanas', price: 60, description: 'Ligereza y comodidad.', stock: 8 },
-                { id: 4, name: 'Chaqueta Urbana', price: 100, description: 'Perfecta para el clima frío.', stock: 3 },
-            ];
+        const fetchedItems = [
+            { id: 1, name: 'Remera Hombre', price: 20, description: 'Remera deportiva ideal para entrenamientos.', stock: 10 },
+            { id: 2, name: 'Remera Mujer', price: 40, description: 'Remera cómoda para uso urbano.', stock: 5 },
+            { id: 3, name: 'Zapatillas Urbanas', price: 60, description: 'Zapatillas ligeras y cómodas.', stock: 8 },
+            { id: 4, name: 'Chaqueta Urbana', price: 100, description: 'Chaqueta ideal para el frío.', stock: 3 },
+        ];
 
-            // Buscar el producto por ID
-            const foundItem = fetchedItems.find(product => product.id === parseInt(id));
-            setItem(foundItem);
-        };
-
-        fetchItem();
+        // Buscar el producto por ID
+        const foundItem = fetchedItems.find(product => product.id === parseInt(id));
+        setItem(foundItem);
     }, [id]);
 
-    return (
+    // Define la función onAddToCart
+    const onAddToCart = (item, size, color) => {
+        console.log(`Producto agregado al carrito: ${item.name}, Talle: ${size}, Color: ${color}`);
+        // Lógica para agregar el producto al carrito
+    };
+
+    return ( 
         <div className="detail-container">
             {item ? (
-                <ItemDetail item={item} />
+                <ItemDetail item={item} onAddToCart={onAddToCart} />  /*función onAddToCart */
             ) : (
                 <p>Product not found.</p>
             )}

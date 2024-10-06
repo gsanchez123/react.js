@@ -1,49 +1,60 @@
-/* CartWidget.css */
 .cart-widget {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.cart-icon-container {
     position: relative;
-    margin-right: 15px;
 }
 
 .cart-icon {
-    color: #007bff;
-    transition: transform 0.3s ease;
-}
-
-.cart-icon:hover {
-    transform: scale(1.2); /* Crece al hacer hover */
+    font-size: 24px;
+    color: #c01515;
 }
 
 .cart-count {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background-color: #dc3545; /* Color rojo para el contador */
+    background-color: red;
     color: white;
-    padding: 5px 8px;
     border-radius: 50%;
-    font-size: 0.9rem;
-    font-weight: bold;
+    padding: 3px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
 }
 
-.add-to-cart-btn {
-    padding: 8px 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.cart-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-.add-to-cart-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+.cart-dropdown h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
 }
+
+.cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-dropdown li {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.cart-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.cart-link:hover {
+    text-decoration: underline;
+}
+

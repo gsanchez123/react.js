@@ -1,0 +1,37 @@
+.cart-container {
+    padding: 20px;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.item-details {
+    margin-left: 15px;
+}
+
+.remove-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-button:hover {
+    background-color: #ff0000;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}

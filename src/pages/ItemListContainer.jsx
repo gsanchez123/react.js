@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import ItemList from './ItemList';
-import CartWidget from "../components/CartWidget";
-import StripeCheckout from 'react-stripe-checkout';
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
     const { id } = useParams();
     const [items, setItems] = useState([]);
-    const [cart, setCart] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState([]);
     const [priceRange, setPriceRange] = useState([0, 1000]);
     const [onlyInStock, setOnlyInStock] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchedItems = [
@@ -34,21 +32,6 @@ const ItemListContainer = () => {
         setItems(filtered);
         setFilteredItems(filtered);
     }, [id]);
-
-    const handleAddToCart = (item, size, color) => {
-        if (item.stock === 0) {
-            alert('Este producto no tiene stock disponible.');
-            return;
-        }
-        const newCartItem = { ...item, size, color };
-        setCart([...cart, newCartItem]);
-        alert(`${item.name} agregado al carrito en talla ${size} y color ${color}`);
-    };
-
-    const handleRemoveFromCart = (index) => {
-        const newCart = cart.filter((_, i) => i !== index);
-        setCart(newCart);
-    };
 
     const handleSearch = (e) => {
         const search = e.target.value.toLowerCase();
@@ -83,10 +66,9 @@ const ItemListContainer = () => {
         applyFilters(items, searchTerm, priceRange, !onlyInStock);
     };
 
-    const handleToken = (token) => {
-        // aca se va a manejar el token de Stripe para realizar el pago
-        alert('Pago exitoso!');
-        console.log(token);
+    // Función para redirigir al detalle del producto
+    const handleCardClick = (itemId) => {
+        navigate(`/item/${itemId}`);
     };
 
     return (
@@ -119,22 +101,8 @@ const ItemListContainer = () => {
                 </label>
             </div>
 
-            <CartWidget cart={cart} onRemoveFromCart={handleRemoveFromCart} />
-
-            <ItemList items={filteredItems} onAddToCart={handleAddToCart} />
-
-            {cart.length > 0 && (
-                <StripeCheckout
-                    stripeKey="tu_clave_publica_de_stripe"
-                    token={handleToken}
-                    amount={cart.reduce((total, item) => total + item.price * item.stock, 0) * 100} // Total en centavos
-                    name="Compra de Productos"
-                    billingAddress
-                    shippingAddress
-                >
-                    <button className="btn btn-success mt-4">Comprar Ahora</button>
-                </StripeCheckout>
-            )}
+            {/* Se pasa la función de clic a ItemList */}
+            <ItemList items={filteredItems} onCardClick={handleCardClick} />
         </div>
     );
 };

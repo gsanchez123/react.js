@@ -14,8 +14,8 @@ body, html {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* Cambiado para ocupar todo el ancho */
-    justify-content: flex-start; /* Cambiado para que los elementos comiencen desde arriba */
+    align-items: stretch; /* Cambiado  ocupar todo el ancho */
+    justify-content: flex-start; /* modificado para que los elementos comiencen desde arriba */
 }
 
 .section {
@@ -41,7 +41,7 @@ h2 {
 p {
     font-size: 1.2rem;
     color: #333;
-    max-width: 800px; /* ajustar esto si es necesario */
+    max-width: 800px; /* ajustar  si es necesario */
     margin: 0 auto;
 }
 
